@@ -1,0 +1,187 @@
+
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>KYLIE RUE -- Game Artist/Developer</title>
+	<!--<link rel="stylesheet" type="text/css" href="css/style.css" />-->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+<style>
+body, html {
+	margin: 0;
+	/*background-color: #808080;*/
+	background: #e9c0d0;
+	color: #db7ea2;
+	font-family: "Arial Narrow Bold", "Arial", sans-serif;
+	overflow: hidden;
+}
+
+#container {
+	height: 100%;
+	text-align: center;
+	overflow: hidden;
+}
+
+#main-section {
+	position: relative;
+	top: 40%;
+}
+
+#main-header {
+	display: inline-block;
+	font-size: 82px;
+	letter-spacing: 0.03em;
+}
+
+#sub-header {
+	display: inline-block;
+	font-size: 36px;
+	letter-spacing: 0.5em;
+}
+
+/* nav container, overriding default values */
+#nav {
+	position: absolute;
+	display: table;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+/* position main nav items in a row */
+#nav li {
+	display: table-cell;
+	min-width: 100px;
+}
+
+/* set main nav item style */
+#nav li a {
+	display: block;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	text-decoration: none;
+	background: #00FF00;
+	color: #FFFFFF;
+}
+
+/* set default display behavior for submenu elements */
+#nav li ul {
+	display: none;
+}
+#nav li ul li {
+	display: block;
+}
+#nav li ul li a {
+	background: #0000FF;
+	min-width: 100px;
+}
+
+/* main nav item fades to different color on hover */
+#nav li:hover > a {
+	animation: menu-hover-fadein 0.15s ease-out 0s 1 forwards;
+}
+
+/* submenu fades in when main nav item receives hover */
+#nav li:hover > .hidden, .hidden:hover {
+	display: table-row;
+	animation: submenu-fadein 0.15s ease-out;
+}
+
+/* submenu item fades to different color on hover, overrides main nav style */
+#nav li ul li a:hover {
+	animation: submenu-hover 0.1s ease-out 0s 1 forwards;
+}
+
+/*Responsive Styles*/
+
+@media screen and (max-width : 760px) {
+	#nav {
+		position: static;
+		display: none;
+	}
+
+	li {
+		margin-bottom: 1px;
+	}
+
+	ul li, li a {
+		width: 100%;
+	}
+
+	.show-menu {
+		display: block;
+	}
+}
+
+
+/* nav animations */
+
+@keyframes menu-hover-fadein {
+	0% {
+		background: #00FF00;
+	} 100% {
+		background: #008800;
+	}
+}
+
+@keyframes submenu-fadein {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes submenu-fadeout {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+@keyframes submenu-hover {
+	0% {
+		background: #0000FF;
+	}
+	100% {
+		background: #FF00FF;
+	}
+}
+</style>
+
+</head>
+<body>
+
+<div id="container">
+
+	<div id="main-section">
+		<span id="main-header">KYLIE RUE</span><br />
+		<span id="sub-header">game artist/developer</span>
+	</div>
+
+</div>
+	
+
+<!--
+<ul id="nav">
+	<li><a href="#">Home</a></li>
+	<li><a href="#">Contact</a></li>
+	<li>
+		<a href="#">Extra</a>
+		<ul class="hidden">
+			<li><a href="#">a</a></li>
+			<li><a href="#">b</a></li>
+		</ul>
+	</li>
+</ul>
+-->
+
+</body>
+</html>
