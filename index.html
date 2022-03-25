@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>KYLIE RUE -- Teacher, Artist, Gamedev</title>
+	<title>Kylie Rue Butler</title>
 	<!--<link rel="stylesheet" type="text/css" href="css/style.css" />-->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -19,21 +19,53 @@ body, html {
 	overflow: hidden;
 }
 
+a {
+	text-decoration: none;
+	color: #1a1a1a;
+}
+
 #container {
 	text-align: center;
 	overflow: hidden;
 }
 
-#main-header {
-	display: inline-block;
-	font-size: 82px;
-	letter-spacing: 0.03em;
+#main-content {
+	height: 100%;
+	background-color: #000;
 }
 
-#sub-header {
-	display: inline-block;
-	font-size: 36px;
-	letter-spacing: 0.5em;
+#header {
+	text-align: right;
+	padding-top: 2em;
+}
+
+#nav-wrapper {
+	width: 960px;
+	margin: 0 auto;
+}
+
+#topNav {
+	display: table;
+	margin: 0 auto;
+	margin-right: 0;
+	padding: 0.5em;
+	letter-spacing: -0.04em;
+}
+
+#topNav a {
+	font-size: 12pt;
+	color: #707070;
+	//font-weight: bold;
+}
+
+#topNav a:hover {
+	color: #1a1a1a;
+}
+
+#topNav li {
+	display: table-cell;
+	padding-left: 3em;
+	list-style-type: none;
 }
 
 /*Responsive Styles*/
@@ -49,26 +81,25 @@ body, html {
 
 <div id="container">
 
-	<div id="main-section">
-		<span id="main-header">KYLIE RUE</span><br />
-		<span id="sub-header">gamedev</span>
+<header id="header">
+	<div id="nav-wrapper">
+		<ul id="topNav">
+			<li><a href="#">Illustration</a></li>
+			<li><a href="#">Animation</a></li>
+			<li><a href="#">Coding Projects</a></li>
+			<li><a href="#">Resume</a></li>
+			<li><a href="#">About</a></li>
+		</ul>
 	</div>
+</header>
+
+<div id="main-content">
+
+</div>
 
 </div>
 	
 
-
-<ul id="nav">
-	<li><a href="#">Home</a></li>
-	<li><a href="#">Contact</a></li>
-	<li>
-		<a href="#">Extra</a>
-		<ul class="hidden">
-			<li><a href="#">a</a></li>
-			<li><a href="#">b</a></li>
-		</ul>
-	</li>
-</ul>
 
 
 </body>
