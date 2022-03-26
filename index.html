@@ -11,17 +11,17 @@
 
 <style>
 
+@import url('https://fonts.googleapis.com/css2?family=Neucha&family=Poppins&display=swap');
+
 body, html {
 	margin: 0;
 	background: #ffffff;
-	color: #1a1a1a;
-	font-family: "Arial Narrow Bold", "Arial", sans-serif;
+	font-family: "Poppins", sans-serif;
 	overflow: hidden;
 }
 
 a {
 	text-decoration: none;
-	color: #1a1a1a;
 }
 
 #container {
@@ -30,45 +30,134 @@ a {
 }
 
 #main-content {
+	width: 1360px;
 	height: 100%;
-	background-color: #000;
+	background-color: #EEE;
+	margin: 0 auto;
 }
 
 #header {
-	text-align: right;
-	padding-top: 2em;
-}
-
-#nav-wrapper {
-	width: 960px;
-	margin: 0 auto;
-}
-
-#topNav {
 	display: table;
+	width: 1360px;
+	padding-top: 30px;
+	padding-bottom: 20px;
 	margin: 0 auto;
-	margin-right: 0;
-	padding: 0.5em;
-	letter-spacing: -0.04em;
 }
 
-#topNav a {
-	font-size: 12pt;
-	color: #707070;
-	//font-weight: bold;
-}
-
-#topNav a:hover {
-	color: #1a1a1a;
-}
-
-#topNav li {
+#header > div {
 	display: table-cell;
-	padding-left: 3em;
-	list-style-type: none;
+	float: left;
+	height: 36px;
+	overflow: hidden;
 }
 
-/*Responsive Styles*/
+#logo-panel { 
+	margin-right: 60px;
+}
+
+#nav-panel {
+	margin-right: 320px;
+}
+
+#social-panel {
+
+}
+
+
+
+#logo { 
+	color: #000000;
+	font-size: 32px;
+	font-family: "Neucha", cursive;
+	font-weight: bolder;
+	letter-spacing: 0.02em;
+	transform: translateY(-4px);
+}
+
+#nav {
+	display: table;
+	font-size: 13pt;
+	letter-spacing: -0.05em;
+	height: 36px;
+}
+
+#nav a {
+	color: #000000;
+}
+
+#nav div {
+	display: table-cell;
+	padding-right: 46px;
+	vertical-align: bottom;
+}
+
+#social-table {
+	display: table;
+	height: 36px;
+	padding-top: 8px;
+}
+
+#social-table img {
+	border-right: 10px solid transparent;
+	opacity: 0.85;
+}
+
+#social-table img:hover {
+	opacity: 1.0;
+	transition: opacity 150ms;
+}
+
+#social-twitter { content: url('ui-assets/twitter-logo-small-black.png'); }
+
+#social-linkedin { content: url('ui-assets/linkedin-logo-small-black.png'); }
+
+
+
+/* Link Hover */
+
+#nav div a {
+	display: block;
+	position: relative;
+	padding: 0.2em 0;
+}
+
+/* Fade in */
+#nav div a::after {
+	content: '';
+	color: #000000;
+	position: absolute;
+	bottom: 0;
+	left: 1px;
+	width: 100%;
+	height: 2px;
+	/*background: 
+		linear-gradient(to right, rgba(242, 46, 75, 1), rgba(93, 70, 219, 1)),
+		linear-gradient(to right, rgba(242, 46, 75, 1), rgba(93, 70, 219, 1));*/
+	background-color: #1a1a1a;
+	opacity: 0;
+	transition: opacity 150ms, transform 150ms;
+	transition-timing-function: ease-out;
+}
+
+#nav div a:hover::after,
+#nav div a:focus::after {
+	opacity: 1;
+	transform: translate3d(0, 2px, 0);
+}
+
+#nav div a::after {
+	opacity: 1;
+	transform: scale(0);
+	transform-origin: center;
+}
+
+#nav div a:hover::after,
+#nav div a:focus::after{
+	transform: scale(1);
+}
+
+
+/* Responsive Styles */
 
 @media screen and (max-width : 760px) {
 
@@ -82,14 +171,24 @@ a {
 <div id="container">
 
 <header id="header">
-	<div id="nav-wrapper">
-		<ul id="topNav">
-			<li><a href="#">Illustration</a></li>
-			<li><a href="#">Animation</a></li>
-			<li><a href="#">Coding Projects</a></li>
-			<li><a href="#">Resume</a></li>
-			<li><a href="#">About</a></li>
-		</ul>
+	<div id="logo-panel">
+		<div id="logo">Kylie Rue Butler</div>
+	</div>
+	<div id="nav-panel">
+		<div id="nav">
+			<div><a href="#">3D</a></div>
+			<div><a href="#">Illustration</a></div>
+			<div><a href="#">Animation</a></div>
+			<div><a href="#">Coding Projects</a></div>
+			<div><a href="#">Resume</a></div>
+			<div><a href="#">About</a></div>
+		</div>
+	</div>
+	<div id="social-panel">
+		<div id="social-table">
+			<a href="https://twitter.com/t0uwuchan" target="_blank"><img id="social-twitter" /></a>
+			<a href="https://www.linkedin.com/in/kylieruebutler/" target="_blank"><img id="social-linkedin" /></a>
+		</div>
 	</div>
 </header>
 
