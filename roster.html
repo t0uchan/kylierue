@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="css/style.css" rel="stylesheet" type="text/css" />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Neucha&family=Poppins&display=swap" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+	<title>DFW All-Pro Wrestling</title>
+</head>
+
+<body>
+	<div id="container">
+		<div id="nav">
+			<a href="index.html" class="nav-logo"></a>
+			<a href="index.html">Events</a>
+			<a href="roster.html">Roster</a>
+			<a href="media.html">Media</a>
+			<a href="shop.html">Shop</a>
+			<a href="training.html">Training</a>
+			<a href="about.html">About</a>
+			<a class="nav-spacer"></a>
+			<a href="https://www.facebook.com/DFWAllProWrestling"><img src="images/ui/facebook.webp" /></a>
+		</div>
+		<div id="main-content">
+
+			<h1>Roster</h1>
+
+			<div class="roster-container">
+				<div class="roster-card">
+					<img src="images/portrait-randy.png" />
+					<span class="roster-card-ground"></span>
+					<span class="roster-card-name">"Macho Man" Randy Savage</span>
+					<span class="roster-card-stable">New World Order</span>
+				</div>
+				<div class="roster-card">
+					<img src="images/portrait-concrete.png" />
+					<div class="portrait-ground-hover"></div>
+					<img src="images/portrait-andre-alpha.png" />
+					<span class="roster-card-ground"></span>
+					<span class="roster-card-name">Andre the Giant</span>
+				</div>
+				<div class="roster-card">
+					<img src="images/portrait-jake.png" />
+					<span class="roster-card-ground"></span>
+					<span class="roster-card-name">Jake "The Snake" Roberts</span>
+				</div>
+				<div class="roster-card">
+					<img src="images/portrait-bret.png" />
+					<span class="roster-card-ground"></span>
+					<span class="roster-card-name">Bret "The Hitman" Hart</span>
+				</div>
+			</div>
+
+
+		</div>
+
+		<div id="footer">
+			<span></span>
+		</div>
+	</div>
+	<script src="js/main.js"></script>
+	<script language="javascript">
+	$(document).ready(function() {
+		var n_cards = $('.roster-container').children().length;
+		var n_hidden = 3 - (n_cards % 3);
+		n_cards += n_hidden;
+		for (var i = 0; i < n_hidden; i++) {
+			$('.roster-container').append("<div class=\"roster-card hidden\"></div>");
+		}
+		var fade_interval = 200;
+		$('.roster-container > div').each(function(index){
+			var temp = fade_interval * index;
+			temp = temp + "ms";
+			$(this).css("animation-delay", temp);
+		});
+	});
+	</script>
+</body>
+
+</html>

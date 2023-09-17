@@ -1,0 +1,362 @@
+body, html, div, span, blockquote, h1, h2, h3, h4, h5, h6, h7 {
+	background-color: transparent;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+}
+
+body, html {
+	vertical-align: baseline;
+	min-height: 100%;
+	font-family: Arial, sans-serif;
+}
+
+#container > div:not(:first-child) {
+	opacity: 0;
+	animation: fadeInAnimation 750ms ease;
+	animation-fill-mode: forwards;
+	animation-iteration-count: 1;
+}
+ 
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+     }
+}
+
+#container {
+	background-color: white;
+	color: black;
+	display: flex;
+	flex-direction: column;
+}
+
+h1, h2, h3, h4, h5, h6, h7 {
+	color: black;
+	text-align: left;
+	margin-bottom: 20px;
+}
+
+h2, h3, h4, h5, h6, h7 {
+	margin-top: 0;
+	margin-bottom: 6px;
+}
+
+h1 {
+	font-size: 52px;
+	letter-spacing: 0.03em;
+	font-family: "Bebas Neue";
+	border-bottom: 1px solid black;
+	text-transform: uppercase;
+}
+
+p {
+	text-align: left;
+	line-height: 1.75em;
+	//width: 460px;
+}
+
+#splash {
+	margin: 40px auto; /* center */
+	margin-bottom: 0;
+	width: 960px;
+	position: relative;
+}
+
+#splash img {
+	width: 960px;
+	object-fit: cover;
+}
+
+#splash-desc {
+	position: absolute;
+	bottom: 4px;
+	left: 0;
+	width: 920px;
+	padding: 10px 20px 20px 20px;
+	//background-color: black;
+	background-image: linear-gradient(to right, rgba(0,64,220,1), rgba(255,0,0,0));
+}
+
+#splash h1 {
+	color: white;
+	border: 0;
+	margin-bottom: 0;
+	font-size: 48px;
+}
+#splash span {
+	color: white;
+	border: 0;
+	font-size: 20px;
+}
+
+#main-content {
+	background-color: #FFFFFF;
+	margin: 20px auto; /* center */
+	padding: 20px;
+	width: 920px;
+	text-align: center;
+	flex-basis: 100vh;
+	opacity: 0;
+	animation: fadeInAnimation ease 400ms;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+	//overflow-x: hidden;
+}
+
+#main-content div, span {
+	margin: 0 auto;
+}
+
+#nav {
+	background-color: black;
+	color: white;
+	flex-basis: 80px;
+	text-align: center;
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+}
+
+.nav-spacer {
+	width: 20px;
+}
+
+#nav a {
+	display: inline-block;
+	text-decoration: none;
+	font-size: 26px;
+	color: white;
+	text-transform: uppercase;
+	letter-spacing: 0.03em;
+	font-family: "Bebas Neue", "Arial";
+	margin-bottom: 8px;
+	margin-right: 30px;
+	opacity: 0;
+	animation: fadeInAnimation 100ms ease;
+	animation-fill-mode: forwards;
+	animation-iteration-count: 1;
+	//background: linear-gradient(to right, #3884ff, #3884ff, 50%, white 50%);
+	//background-clip: text;
+	//-webkit-background-clip: text;
+	//-webkit-text-fill-color: transparent;
+	//background-size: 200% 100%;
+	//background-position: 100%;
+	//transition: background-position 100ms ease;
+	transition: color 130ms ease;
+}
+#nav a:hover {
+	//background-position: 0 100%;
+	color: #3884ff;
+}
+
+.nav-logo {
+	background-image: url("images/nav-logo.png");
+	background-color: #3884ff;
+	width: 150px;
+	height: 50px;
+}
+
+.image-inlay {
+	float: right;
+	//position: relative;
+	//right: 6px;
+	width: 440px;
+	height: 248px;
+	margin: 0 0 32px 32px;
+	//box-shadow: 6px 6px 0 black;
+	object-fit: cover;
+}
+
+.event-card-container {
+	display: flex;
+	flex-direction: column;
+	row-gap: 30px;
+}
+
+.event-card {
+	display: flex;
+	width: 100%;
+	flex-basis: 302px;
+	text-align: left;
+	box-shadow: 0 6px 12px rgba(0,0,0,0.75);
+}
+
+.event-thumbnail {
+	flex-basis: 196px;
+	overflow: hidden;
+}
+
+.lightbox {
+	display: none;
+	position: fixed;
+	z-index: 999;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	padding: 1em;
+	background: rgba(0, 0, 0, 0.8);
+}
+.lightbox:target { display: block; }
+.lightbox span {
+	display: block;
+	width: 100%;
+	height: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.event-thumbnail img {
+	width: 196px;
+	object-fit: cover;
+}
+
+.event-desc {
+	padding: 20px;
+	flex: 1;
+}
+.event-desc h1, .event-desc h2 { border-bottom: 1px solid black;}
+.event-desc h1, h2, h3, h4, h5, h6, h7 {
+	margin-bottom: 14px;
+}
+.event-desc-text {
+	position: relative;
+}
+.event-ticket {
+	flex-basis: 200px;
+	text-align: center;
+}
+
+.ticket-button {
+	display: inline-block;
+	margin: 120px auto;
+	width: 160px;
+	border: 1px solid #3884ff;
+	padding: 14px 0 14px 0;
+	font-size: 28px;
+	font-family: "Bebas Neue";
+	letter-spacing: 0.03em;
+	background-color: #0055de;
+	color: white;
+	text-decoration: none;
+	//box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+	transition: background-color 100ms ease;
+}
+.ticket-button:hover {
+	background-color: #3884ff;
+}
+
+h2 { font-size: 30px;}
+h3 { font-size: 20px;}
+
+
+.roster-container {
+	display: flex;
+	//padding: 0 20px 0 20px;
+	flex-flow: row wrap;
+	width: 920px;
+	gap: 21px;
+	row-gap: 21px;
+}
+
+.roster-card {
+	width: 292px;
+	height: 292px;
+	background-color: black;
+	position: relative;
+	font-size: 16px;
+	box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+	overflow: hidden;
+	opacity: 0;
+	animation: fadeInAnimation 750ms ease, slideUp 750ms ease;
+	animation-fill-mode: forwards;
+}
+
+@keyframes slideUp {
+	0% { transform: translate(0, 20px); }
+	100% { transform: translate(0, 0); }
+}
+
+.roster-card img {
+	position: absolute;
+	left: 0;
+	top: 0;
+	transition: transform 300ms ease;
+}
+
+.roster-card img:hover {
+	transform: scale(1.05);
+}
+
+.roster-card-ground {
+	position: absolute;
+	background-color: black;
+	width: 100%;
+	height: 58px;
+	left: 0;
+	bottom: 0;
+	overflow: hidden;
+}
+
+.roster-card-name {
+	background-color: transparent;
+	width: 100%;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	padding-bottom: 28px;
+	color: #3884ff;
+	color: white;
+	text-transform: uppercase;
+	font-family: Arial, sans-serif;
+	font-weight: bold;
+}
+
+.roster-card-stable {
+	background-color: transparent;
+	width: 100%;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	padding-bottom: 10px;
+	color: #3884ff;
+	font-size: 14px;
+	text-transform: uppercase;
+	font-family: Arial, sans-serif;
+	font-weight: bold;
+}
+
+.hidden {
+	background-color: transparent;
+	box-shadow: none;
+}
+
+.portrait-ground-hover {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 292px;
+	height: 292px;
+	opacity: 0;
+	background-color: rgba(56, 182, 255, 0.5);
+	mix-blend-mode: hard-light;
+	transition: opacity 300ms ease;
+}
+
+.roster-card:hover .portrait-ground-hover {
+	opacity: 1;
+}
+
+#footer {
+	width: 100%;
+	background-color: black;
+	color: white;
+	text-align: center;
+	flex-basis: 70px;
+}
